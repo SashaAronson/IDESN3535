@@ -1,0 +1,16 @@
+body {
+		font-family: 'Asap Condensed', cursive;
+		}
+		#my-header, h1 {
+			font-size: 40px;
+			color: skyblue;
+		}
+		.my-list-item {
+			font-size: 30px;
+		}
+		.my-list-item a {
+			color: darkblue;
+		}
+		.my-list-item a:hover {
+			color: green;
+		}
