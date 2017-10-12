@@ -1,0 +1,305 @@
+.wrapper {
+    position: absolute;
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+}
+
+.infobar {
+    width: 100%;
+    height: 200px;
+    float: left;
+    margin: 0px;
+    background-color: red;
+}
+.searchbar {
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    margin-top: 6px;
+    margin-left: 1000px;
+    background-color: black;
+}
+.searchborder {
+    background-color: lightblue;
+    margin-top: 0px;
+    width: 100%;
+    height: 55px;
+    float: left;
+}
+
+ .slider {
+    float: left;
+    height: 550px;
+    width: 100%;
+    background-color: yellow;
+ }
+ .barwrapper {
+    background-color: grey;
+    width: 100%;
+    height: 80px;
+    margin-top: 550px;
+ }
+
+.hoursbar{
+    float: left;
+    width: 440px;
+    height: 80px;
+    background-color: limegreen;
+}
+.admissionbar{
+    float: left;
+    width: 543px;
+    height: 80px;
+    background-color: pink;
+}
+
+.calenderbar {
+    float: left;
+    width: 440px;
+    height: 80px;
+    background-color: purple;
+}
+.imglatenight {
+    float: left;
+    margin-left: 150px;
+    width: 440px;
+    height: 440px;
+    background-color: darkorange;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.foursquares {
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    background-color: orange;
+    height: 440px;
+    width: 440px;
+}
+
+ .sq1 {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: darkred;
+ }
+ .sq2 {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: darkred;
+ }
+ .sq3 {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: darkred;
+ }
+ .sq4 {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: darkred;
+
+ }
+
+
+/* Tablet */
+@media (max-width: 750px){
+    .searchbar {
+        width: 50px;
+        height: 50px;
+        margin-left: 650px;
+
+    }
+    .searchborder {
+        background-color: transparent;
+    }
+.infobar {
+    width: 100%;
+    height: 120px;
+    float: left;
+    margin: 0px;
+    background-color: red;
+    }
+
+.barwrapper {
+    background-color: grey;
+    width: 100%;
+    height: 385px;
+    margin-top: 550px;
+    }
+
+
+.hoursbar{
+    float: left;
+    width: 750px;
+    height: 80px;
+    background-color: limegreen;
+    margin: 5px;
+}
+.admissionbar{
+    float: left;
+    width: 750px;
+    height: 80px;
+    background-color: pink;
+    margin: 5px;
+}
+.calenderbar {
+    float: left;
+    width: 750px;
+    height: 80px;
+    background-color: purple;
+    margin: 5px;
+}
+.imglatenight {
+    float: left;
+    margin: 10px;
+    width: 700px;
+    height: 700px;
+    background-color: darkorange;
+
+}
+
+.foursquares {
+    float: left;
+    background-color: orange;
+    height: 750px;
+    width: 750px;
+}
+
+.sq1 {
+    float: left;
+    margin: 12px;
+    width: 330px;
+    height: 330px;
+    background-color: darkred;
+ }
+ .sq2 {
+    float: left;
+    margin: 12px;
+    width: 330px;
+    height: 330px;
+    background-color: darkred;
+ }
+ .sq3 {
+    float: left;
+    margin: 12px;
+    width: 330px;
+    height: 330px;
+    background-color: darkred;
+ }
+ .sq4 {
+    float: left;
+    margin: 12px;
+    width: 330px;
+    height: 330px;
+    background-color: darkred;
+ }
+}
+
+/* Mobile */
+@media(max-width: 480px){
+.searchbar {
+        width: 50px;
+        height: 50px;
+        margin-left: 330px;
+        position: relative;
+
+    }
+.searchborder {
+        background-color: transparent;
+     }
+.infobar {
+    width: 100%;
+    height: 120px;
+    float: left;
+    margin: 0px;
+    background-color: red;
+    }
+
+.barwrapper {
+    background-color: grey;
+    float: left;
+    width: 100%;
+    height: 280px;
+    margin: 0px;
+}
+
+
+.hoursbar{
+    float: left;
+    width: 100%;
+    height: 80px;
+    background-color: limegreen;
+    margin: 5px;
+}
+.admissionbar{
+    float: left;
+    width: 100%;
+    height: 80px;
+    background-color: pink;
+    margin: 5px;
+}
+.calenderbar {
+    float: left;
+    width: 100%;
+    height: 80px;
+    background-color: purple;
+    margin: 5px;
+}
+.imglatenight {
+    float: left;
+    margin: 0px;
+    width: 100%;
+    height: 500px;
+    background-color: darkorange;
+
+}
+
+.foursquares {
+    float: left;
+    background-color: orange;
+    height: 390px;
+    width: 100%;
+}
+
+.sq1 {
+    float: left;
+    margin: 8px;
+    width: 180px;
+    height: 180px;
+    background-color: darkred;
+ }
+ .sq2 {
+    float: left;
+    margin: 8px;
+    width: 180px;
+    height: 180px;
+    background-color: darkred;
+ }
+ .sq3 {
+    float: left;
+    margin: 8px;
+    width: 180px;
+    height: 180px;
+    background-color: darkred;
+ }
+ .sq4 {
+    float: left;
+    margin: 8px;
+    width: 180px;
+    height: 180px;
+    background-color: darkred;
+ }
+}
+
+
+

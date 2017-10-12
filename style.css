@@ -1,16 +1,43 @@
-body {
-		font-family: 'Asap Condensed', cursive;
+
+	header {
+			background-color: grey;
+			height: 44px;
 		}
-		#my-header, h1 {
-			font-size: 40px;
-			color: skyblue;
+		header a {
+			color: white;
 		}
-		.my-list-item {
-			font-size: 30px;
+		header ul{
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
 		}
-		.my-list-item a {
-			color: darkblue;
+		header ul li {
+			float: left;
+			width: 20%;
+			margin: 10px 0;
 		}
-		.my-list-item a:hover {
-			color: green;
+
+		#section1 {
+			background-color: orange;
+			padding: 10px;
+			float: left;
 		}
+		#section2 {
+			background-color: pink;
+			padding: 10px;
+			float: left;
+
+		}
+		#section3 {
+			background-color: skyblue;
+			padding: 10px;
+			float: left;
+		}
+		#sidebar{
+			background-color: green;
+			color: white;
+			padding: 10px;
+			float: left;
+		}
+
+
