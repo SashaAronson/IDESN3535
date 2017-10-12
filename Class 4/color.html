@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colors</title>
+	<link rel="stylesheet" type="text/css" href="color.css">
+
+</head>
+<body>
+
+<button class="Button" id="red">Add Red</button>
+<button class="Button" id="blue">Add Blue</button>
+<button class="Button" id="yellow">Add Yellow</button>
+
+<div class="circle" id="circle"></div>
+
+<script> 
+
+
+	function clickRed(){
+
+		document.getElementById("red").classList.toggle("enabled")
+
+		const circle = document.getElementById("circle");
+		circle.classList.toggle("red");
+		}
+	const element = document.getElementById("red");
+	element.addEventListener("click", clickRed);
+
+	function clickBlue(){
+
+		document.getElementById("blue").classList.toggle("enabled")
+
+		const circle = document.getElementById("circle");
+		circle.classList.toggle("blue");
+	}
+	const element2 = document.getElementById("blue");
+	element2.addEventListener("click", clickBlue);
+
+	function clickYellow(){
+
+		document.getElementById("yellow").classList.toggle("enabled")
+
+		const circle = document.getElementById("circle");
+		circle.classList.toggle("yellow");
+		}
+	const element3 = document.getElementById("yellow");
+	element3.addEventListener("click", clickYellow);
+
+</script>
+
+</body>
+</html>

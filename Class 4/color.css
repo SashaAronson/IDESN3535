@@ -1,0 +1,56 @@
+.circle {
+	width: 600px;
+	height: 600px;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin-top: 30px;
+	margin-left: 200px;
+
+}
+.Button{
+	background-color: none;
+	font-size: 25px;
+	font-family: Avenir;
+	margin-left: 100px;
+	margin-top: 20px;
+	width: 200px;
+	height: 80px;
+}
+.circle:hover {
+	background-image: url(pug.jpg);
+	background-repeat: no-repeat;
+	background-position: center, cover;
+}
+
+.enabled {
+	background-color: #F5E7AA;
+}
+.red {
+	background-image: url(red.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.blue {
+	background-image: url(boobs.jpg);
+}
+.yellow {
+	background-image: url(bob.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190%;
+}
+
+.red.blue{
+	background-color: purple;
+}
+
+.blue.yellow {
+	background-color: #0E8521;
+}
+.red.yellow{
+	background-color: darkorange;
+}
+.red.yellow.blue {
+	background-color: #422719;
+}
