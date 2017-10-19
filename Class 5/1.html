@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip Calculator</title>
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+	<style>
+		.calculator {
+			width: 500px;
+			height: 600px;
+			background-color: lightgrey;
+			border-radius: 5%;
+			border: gray 2px solid;
+			padding: 10px;
+			margin: 10px;
+			font-family: 'Orbitron', sans-serif;
+		}
+
+	h1 {
+		margin-left: 150px;
+	}
+	
+	h2 {
+		margin-left: 180px;
+	}
+
+	h3 {
+		margin-top: 120px;
+		margin-left: 100px;
+	}
+
+	input {
+		margin-left: 350px;
+			height: 20px;
+	}
+
+	.slider {
+	margin-left: 0px;
+	margin-top: 100px;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;   
+    background: white;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+	}
+
+	.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+	}
+
+	.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+	}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="calculator">
+		<h1>Tip Calculator</h1>
+
+		<h2>Bill Amount</h2>
+		<input id="bill"/> 
+
+
+		<div id="slidecontainer">
+			  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
+			  <p>Tip Percent: <span id="demo"></span></p>
+		</div>
+
+		<script>
+			var slider = document.getElementById("myRange");
+			var output = document.getElementById("demo");
+			output.innerHTML = slider.value;
+
+			slider.oninput = function() {
+			  output.innerHTML = this.value;	
+}
+
+	const bill = document.getElementById ('bill')
+		bill.addEventListener('keyup', function(){
+		console.log (bill.value)
+		})
+
+
+		</script>
+
+
+		<h3>Tip Amount</h3>
+
+		<input id="tip" disabled="disabled" />
+
+		<h4>Total Amount</h4>
+		<input id="total" disabled="disabled" />
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>
