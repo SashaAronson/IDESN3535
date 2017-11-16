@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    
+    <title>Timer Homework</title>
+
+    <style>
+    #wrapper {
+        width: 600px;
+        height: 600px;
+        background-color: #2A2B2A;
+        border-color: grey;
+        border-style: double;
+        border-width: 15px;
+        border-radius: 5%;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 30px;
+    }
+
+    #timer {
+        color: #FF3100;
+        margin-left: 150px;
+        font-size: 100px;
+    }
+
+    #start-button {
+        margin-left: 200px;
+        border-radius: 10%;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 35px; 
+        color: black;
+        background-color: white;
+        width: 200px;
+        height: 80px;
+    }
+
+    .control-button {
+        margin-left: 155px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+
+    }
+
+    #Hours {
+        color: white;
+        margin-top: 50px;
+        margin-left: 250px;
+    }
+
+    #Minutes {       
+        color: white;
+        margin-left: 250px;
+
+    }
+
+    #Seconds{
+        color: white;
+        margin-left: 250px;
+
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="timer">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+
+        <button id="start-button">Start/Stop</button>
+
+        <div id="control-buttons">
+            <div>
+                    <div id="Hours">Hours</div>
+                    <button class="control-button" data-amount="-3600">-</button>
+                    <button class="control-button" data-amount="3600">+</button>
+            </div>
+            <div>
+                    <div id="Minutes">Minutes</div>
+                    <button class="control-button" data-amount="-60">-</button>
+                    <button class="control-button" data-amount="60">+</button>
+            </div>
+            <div>
+                     <div id="Seconds">Seconds</div>
+                    <button class="control-button" data-amount="-1">-</button>
+                    <button class="control-button" data-amount="1">+</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let seconds = 0;
+
+        function displayTime(amountOfSeconds) {
+            let hrs = 0;
+            let mins = 0;
+
+            while (amountOfSeconds >= 3600) {
+                hrs++;
+                amountOfSeconds = amountOfSeconds - 3600;
+            }
+
+            while (amountOfSeconds >= 60) {
+                mins++;
+                amountOfSeconds = amountOfSeconds - 60;
+            }
+
+            $("#hours").text(pad(hrs));
+            $("#minutes").text(pad(mins));
+            $("#seconds").text(pad(amountOfSeconds));
+        }
+
+
+        $(document).ready(function() {
+
+            $(".control-button").on('click', function() {
+                const amount = parseInt($(this).data("amount"));
+
+                seconds += amount;
+                seconds = Math.max(seconds, 0);
+
+                displayTime(seconds);
+            });
+
+        });
+
+
+        let timer;
+        function tick() {
+            seconds--;
+            seconds = Math.max(seconds, 0);
+            displayTime(seconds);
+        }
+        $("#start-button").on('click', function() {
+            if (timer) {
+                clearInterval(timer);
+                timer = false;
+            } else {
+                timer = setInterval(tick, 1000);
+            }
+        });
+
+
+        function pad(n) {
+            n = n.toString();
+            // "1"  
+            if (n.length === 1){
+                return "0" + n;
+            } else {
+                return n;
+            }
+       }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

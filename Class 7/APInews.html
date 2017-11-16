@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced API Homework: NY Times News</title>
+	<link rel="stylesheet" type="text/css" href="../Class 2/normalize.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script>
+
+	var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+	url += '?' + $.param({
+	  'api-key': "094f233350ce4c31b13dbd9192b9db69"
+	});
+	$.ajax({
+	  url: url,
+	  method: 'GET',
+	}).done(function(result) {
+	  console.log(result);
+	}).fail(function(err) {
+	  throw err;
+	});
+
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

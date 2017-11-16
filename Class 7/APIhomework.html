@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Homework- Class Schedule</title>
+
+	<link rel="stylesheet" type="text/css" href="../Class 2/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function() {
+
+		$.ajax({
+			url: "http://www.bvandorn.com/idesn-3535/schedule.json",
+			data: {},
+			success: function(response){
+				console.log(response);
+
+				for (let i = 0; i < response.classes.length; i++){
+					const currentClass = response.classes[i];
+
+					const classRow = document.createElement('tr');
+
+					const dateCol = document.createElement('td');
+					dateCol.innerHTML = "Class " + i + "<br />" + currentClass.date;
+					classRow.append(dateCol);
+
+					$("#class-schedule").append(classRow);
+				//agenda
+					const agendaCol = document.createElement('td');
+					const agendaList = document.createElement('ul');
+					currentClass.agenda.forEach(function(agendaItem){
+						const agendaListItem = document.createElement('li');
+						agendaListItem.innerText = agendaItem;
+						agendaList.append(agendaListItem);
+					});
+					agendaCol.append(agendaList);
+					classRow.append(agendaCol);
+
+				//homework
+					const homeworkCol = document.createElement('td');
+					const homeworkList = document.createElement('ul');
+					currentClass.homework.forEach(function(homeworkItem){
+						const homeworkListItem = document.createElement('li');
+						homeworkListItem.innerText = homeworkItem;
+						homeworkList.append(homeworkListItem);
+					});
+					homeworkCol.append(homeworkList);
+					classRow.append(homeworkCol);
+
+
+				//notes
+					const notesCol = document.createElement('td');
+					const notesList = document.createElement('ul');
+					if (currentClass.links){
+						currentClass.links.forEach(function(link){
+								notesList.innerHTML += `<li><a href="${link,link}">${link.name}</a><li>`;
+						});
+					}
+					notesCol.append(notesList);
+					classRow.append(notesCol);
+				}
+			}
+		})
+
+		});
+		$("#class-schedule > tbody").append(classRow);
+
+	</script>
+
+	<style>
+	body {
+		background-color: #EFEFEF;
+	}
+
+	table {
+		border-collapse: collapse;
+		margin-left: 60px;
+		font-family: 'News Cycle', sans-serif;
+		margin-bottom: 50px;
+
+	}
+
+	#head {
+		background-color: #76323F;
+		border-radius: 0%;
+		width: 1200px;
+		margin: 10px;
+		padding: 10px;
+		font-size: 20px;
+		font-family: 'Arial Rounded MT Bold';
+	}
+
+	h1 {
+		margin-left: 100px;
+		margin-top: 10px;
+		color: #CAEBF2;
+		font-size: 50px;
+	}
+
+	h2 {
+		color: #A9A9A9;
+		margin-left: 100px;
+		margin-top: -5px;
+	}
+	tr:nth-child(even) 
+	{
+		background-color: #CAEBF2;
+	}
+
+	tr:nth-child(odd) 
+	{
+		background-color: #A9A9A9;
+	}
+
+	a:link {
+	    color: #76323F;
+	}
+
+	a:visited {
+	    color: #CAEBF2;
+	}
+
+	</style>
+</head>
+<body>
+
+<div id="head">
+		<h1>Advanced Web Design IDESN-3535</h1>
+		<h2>Welcome to the Course Schuedule</h2>
+		<h2><a href="http://bit.ly/2gEbCrd" target="_blank">Syllabus</a></h2>
+	</div>
+
+
+	<table id="class-schedule" border="1">
+		<thead>
+			<tr>
+				<th>Class</th>
+				<th>Agenda</th>
+				<th>Homework</th>
+				<th>Class Notes</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+
+</body>
+</html>
